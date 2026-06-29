@@ -1,3 +1,17 @@
 [gd_scene format=3 uid="uid://bua8n8iyoitob"]
 
+[ext_resource type="PackedScene" uid="uid://da5hm27nicuds" path="res://scenes/world.tscn" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cuxqe1txobhxl" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://di11ee8jh6jjw" path="res://scenes/main.tscn" id="3_lnu2h"]
+
 [node name="Game" type="Node" unique_id=1794463850]
+
+[node name="World" type="Node2D" parent="." unique_id=222779795]
+
+[node name="World" parent="World" unique_id=339213920 instance=ExtResource("1_lnu2h")]
+
+[node name="Player" parent="World" unique_id=149832289 instance=ExtResource("1_uwrxv")]
+
+[node name="Main" parent="." unique_id=1809280691 instance=ExtResource("3_lnu2h")]
+
+[node name="Systems" type="Node" parent="." unique_id=371237240]

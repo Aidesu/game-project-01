@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cfoa8wygrrw6f"]
+
+[ext_resource type="Shader" uid="uid://dn7fykpwv0sfd" path="res://new_shader.gdshader" id="1_rhj8v"]
+[ext_resource type="Script" uid="uid://bn14wu3cr23lu" path="res://color_rect.gd" id="2_3q610"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+shader = ExtResource("1_rhj8v")
+shader_parameter/pixel_size = 8.0
+shader_parameter/shade_strength = 0.2
+
+[node name="Button" type="Control" unique_id=155132482]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1571914018]
+material = SubResource("ShaderMaterial_g4v7s")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_3q610")
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=1363028883]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

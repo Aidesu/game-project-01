@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cotabmgfn21bc"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1654306153]
+
+[node name="Root" type="Control" parent="." unique_id=1271507644]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="HBoxContainer" parent="Root" unique_id=1033695953]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Root/TopBar" unique_id=643011144]
+layout_mode = 2
+
+[node name="ProgressBar2" type="ProgressBar" parent="Root/TopBar" unique_id=214375265]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Root/TopBar" unique_id=773596043]
+layout_mode = 2
+
+[node name="Center" type="Control" parent="Root" unique_id=1985542740]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BottomLeft" type="VBoxContainer" parent="Root" unique_id=1398371830]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Root/BottomLeft" unique_id=1384392181]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Root/BottomLeft" unique_id=1581447637]
+layout_mode = 2
+
+[node name="PauseMenu" type="Control" parent="Root" unique_id=2047014960]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.5
+offset_top = -166.0
+offset_right = 245.5
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2

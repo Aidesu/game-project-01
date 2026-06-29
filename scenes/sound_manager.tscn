@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d4br1tqxdr5bn"]
+
+[ext_resource type="Script" uid="uid://fvrvxsctl6ih" path="res://sound_manager.gd" id="1_s6peo"]
+[ext_resource type="AudioStream" uid="uid://c0ljdsl04n8lb" path="res://ressources/audio/space.mp3" id="2_shlr6"]
+[ext_resource type="AudioStream" uid="uid://ddim6y6txq7hb" path="res://ressources/audio/buy.mp3" id="3_5lwbd"]
+[ext_resource type="AudioStream" uid="uid://bqyupkfujk8yu" path="res://ressources/audio/press.mp3" id="4_ro3ww"]
+
+[node name="SoundManager" type="Node" unique_id=1883120768]
+script = ExtResource("1_s6peo")
+
+[node name="LvlUpSnd" type="AudioStreamPlayer" parent="." unique_id=1053231525]
+stream = ExtResource("2_shlr6")
+
+[node name="BuySnd" type="AudioStreamPlayer" parent="." unique_id=989759270]
+stream = ExtResource("3_5lwbd")
+
+[node name="PressSnd" type="AudioStreamPlayer" parent="." unique_id=155575949]
+stream = ExtResource("4_ro3ww")
