@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://3tfw5d3ditxb"]
+
+[ext_resource type="Texture2D" uid="uid://c5ahuhb7cei3n" path="res://ressources/textures/items/RAM-01.png" id="1_yxiue"]
+
+[node name="ItemSale" type="Control" unique_id=783575802]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -973.0
+offset_bottom = -408.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=534310598]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 168.0
+grow_horizontal = 2
+texture = ExtResource("1_yxiue")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1246728007]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -85.0
+offset_right = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TitleLbl" type="Label" parent="VBoxContainer" unique_id=52093772]
+layout_mode = 2
+text = "Ram 8gb"
+
+[node name="PriceLbl" type="Label" parent="VBoxContainer" unique_id=1912956423]
+layout_mode = 2
+text = "$200"
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=709425159]
+layout_mode = 2
+text = "Add to cart"
