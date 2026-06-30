@@ -1,23 +1,81 @@
 [gd_scene format=3 uid="uid://di11ee8jh6jjw"]
 
-[ext_resource type="Script" uid="uid://ccamk4m7k8arw" path="res://scenes/main.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://ccamk4m7k8arw" path="res://core/autoload/main.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bf2n10a2hq2v5" path="res://ressources/textures/items/MOBO-01.png" id="2_mobo"]
+[ext_resource type="Texture2D" uid="uid://ba2gwt26tqj83" path="res://ressources/textures/items/CPU-01.png" id="3_cpu"]
+[ext_resource type="Texture2D" uid="uid://6tquayt8pph4" path="res://ressources/textures/items/RAM-01.png" id="4_ram"]
+[ext_resource type="Texture2D" uid="uid://b8jtt00yrom7f" path="res://ressources/textures/items/CPU-02.png" id="5_gpu"]
+[ext_resource type="Texture2D" uid="uid://can8oxsbh7t8p" path="res://ressources/textures/items/HDD-01.png" id="6_hdd"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wfyh"]
-bg_color = Color(0.1951631, 0.6747134, 0.7494049, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bar"]
+bg_color = Color(0.082, 0.078, 0.095, 0.95)
+border_width_bottom = 2
+border_color = Color(1.0, 0.74, 0.0, 1.0)
+content_margin_left = 14.0
+content_margin_right = 14.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
 
-[sub_resource type="Gradient" id="Gradient_0wfyh"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.1, 0.1, 0.1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_botbar"]
+bg_color = Color(0.082, 0.078, 0.095, 0.95)
+border_width_top = 2
+border_color = Color(1.0, 0.74, 0.0, 1.0)
+content_margin_left = 14.0
+content_margin_right = 14.0
+content_margin_top = 8.0
+content_margin_bottom = 8.0
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_yf5fn"]
-gradient = SubResource("Gradient_0wfyh")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sidebar"]
+bg_color = Color(0.082, 0.078, 0.095, 0.96)
+border_width_left = 2
+border_color = Color(1.0, 0.74, 0.0, 1.0)
+content_margin_left = 14.0
+content_margin_right = 12.0
+content_margin_top = 12.0
+content_margin_bottom = 12.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57qmd"]
-bg_color = Color(0.49515128, 0, 0.11844922, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shop"]
+bg_color = Color(0.088, 0.082, 0.100, 0.99)
+border_width_top = 2
+border_color = Color(1.0, 0.74, 0.0, 0.55)
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 18.0
+content_margin_bottom = 18.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp_fill"]
+bg_color = Color(1.0, 0.74, 0.0, 1.0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp_bg"]
+bg_color = Color(0.12, 0.11, 0.14, 1.0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn"]
+bg_color = Color(0.0, 0.0, 0.0, 0.0)
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_h"]
+bg_color = Color(1.0, 0.74, 0.0, 0.10)
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_p"]
+bg_color = Color(1.0, 0.74, 0.0, 0.20)
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_close"]
+bg_color = Color(0.50, 0.08, 0.10, 1.0)
+content_margin_left = 6.0
+content_margin_right = 6.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
 
 [node name="Main" type="Control" unique_id=1809280691]
 layout_mode = 3
@@ -26,121 +84,233 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_o5qli")
+script = ExtResource("1_script")
 
-[node name="TitleLbl" type="Label" parent="." unique_id=2010042922]
+[node name="TopBar" type="PanelContainer" parent="." unique_id=101]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 48.0
-offset_right = 20.0
-offset_bottom = 71.0
-grow_horizontal = 2
-text = "Title"
-horizontal_alignment = 1
-
-[node name="LvlLbl" type="Label" parent="." unique_id=1426457516]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -62.0
-offset_right = 20.0
-offset_bottom = -39.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "0"
-horizontal_alignment = 1
-
-[node name="MoneyLbl" type="Label" parent="." unique_id=1816569577]
-layout_mode = 1
-offset_left = 554.0
-offset_top = 16.0
-offset_right = 594.0
-offset_bottom = 39.0
-text = "$"
-horizontal_alignment = 1
-
-[node name="WorkBtn" type="Button" parent="." unique_id=1012849169]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -66.59799
-offset_top = -33.25
-offset_right = 66.59799
-offset_bottom = 33.25
-grow_horizontal = 2
-grow_vertical = 2
-text = "Work"
-
-[node name="ShopBtn" type="Button" parent="." unique_id=1087825578]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 26.0
-offset_top = -33.25
-offset_right = 159.19601
-offset_bottom = 33.25
-grow_vertical = 2
-text = "Shop"
-
-[node name="XpBar" type="ProgressBar" parent="." unique_id=1455730928]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -191.0
-offset_top = -34.0
-offset_right = 192.0
-offset_bottom = -28.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/fill = SubResource("StyleBoxFlat_0wfyh")
-show_percentage = false
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=515085231]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-offset_left = -201.0
-offset_top = 15.0
-offset_right = -16.0
-offset_bottom = 146.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bar")
+
+[node name="HBox" type="HBoxContainer" parent="TopBar" unique_id=102]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MoneyBox" type="VBoxContainer" parent="TopBar/HBox" unique_id=103]
+layout_mode = 2
+custom_minimum_size = Vector2(175.0, 0.0)
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="MoneyLbl" type="Label" parent="TopBar/HBox/MoneyBox" unique_id=104]
+layout_mode = 2
+text = "$0"
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.90, 0.87, 0.80, 1.0)
+
+[node name="EarnLbl" type="Label" parent="TopBar/HBox/MoneyBox" unique_id=105]
+layout_mode = 2
+text = "+0.0$/s"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(1.0, 0.74, 0.0, 1.0)
+
+[node name="HSpacer" type="Control" parent="TopBar/HBox" unique_id=106]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LevelBox" type="VBoxContainer" parent="TopBar/HBox" unique_id=107]
+layout_mode = 2
+custom_minimum_size = Vector2(175.0, 0.0)
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="LvlLbl" type="Label" parent="TopBar/HBox/LevelBox" unique_id=108]
+layout_mode = 2
+text = "LVL 1"
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(1.0, 0.74, 0.0, 1.0)
+
+[node name="XpBar" type="ProgressBar" parent="TopBar/HBox/LevelBox" unique_id=109]
+layout_mode = 2
+max_value = 200.0
+show_percentage = false
+custom_minimum_size = Vector2(0.0, 6.0)
+theme_override_styles/fill = SubResource("StyleBoxFlat_xp_fill")
+theme_override_styles/background = SubResource("StyleBoxFlat_xp_bg")
+
+[node name="StatsSidebar" type="PanelContainer" parent="." unique_id=120]
+layout_mode = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = 50.0
+offset_right = 0.0
+offset_bottom = -46.0
 grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sidebar")
 
-[node name="TotalPcLbl" type="Label" parent="VBoxContainer" unique_id=820612505]
+[node name="VBox" type="VBoxContainer" parent="StatsSidebar" unique_id=121]
 layout_mode = 2
-text = "Computers: 0/0"
+theme_override_constants/separation = 8
 
-[node name="TotalCpuLbl" type="Label" parent="VBoxContainer" unique_id=264979]
+[node name="IncomeTitle" type="Label" parent="StatsSidebar/VBox" unique_id=128]
 layout_mode = 2
-text = "Cpu: 0/0 (0 cores)"
+text = "REVENUE"
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.55, 0.52, 0.47, 1.0)
 
-[node name="TotalRamLbl" type="Label" parent="VBoxContainer" unique_id=833770457]
+[node name="IncomeValueLbl" type="Label" parent="StatsSidebar/VBox" unique_id=129]
 layout_mode = 2
-text = "Ram: 0/0 (0b)"
+text = "+0.0$/s"
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(1.0, 0.74, 0.0, 1.0)
 
-[node name="TotalFlopLbl" type="Label" parent="VBoxContainer" unique_id=82323943]
+[node name="Sep" type="HSeparator" parent="StatsSidebar/VBox" unique_id=130]
 layout_mode = 2
-text = "Gpu: 0/0 (0bFLOPS)"
 
-[node name="TotalStorageLbl" type="Label" parent="VBoxContainer" unique_id=1198643152]
+[node name="BuildTitle" type="Label" parent="StatsSidebar/VBox" unique_id=122]
 layout_mode = 2
-text = "Storage: 0/0 (0b)"
+text = "PC BUILD"
+theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.55, 0.52, 0.47, 1.0)
 
-[node name="Shop" type="Control" parent="." unique_id=1385301213]
+[node name="BuildSection" type="VBoxContainer" parent="StatsSidebar/VBox" unique_id=131]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MoboRow" type="HBoxContainer" parent="StatsSidebar/VBox/BuildSection" unique_id=132]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="MoboIcon" type="TextureRect" parent="StatsSidebar/VBox/BuildSection/MoboRow" unique_id=133]
+layout_mode = 2
+custom_minimum_size = Vector2(22.0, 22.0)
+size_flags_vertical = 4
+texture = ExtResource("2_mobo")
+stretch_mode = 5
+modulate = Color(0.35, 0.30, 0.25, 0.45)
+
+[node name="MoboLbl" type="Label" parent="StatsSidebar/VBox/BuildSection/MoboRow" unique_id=134]
+layout_mode = 2
+text = "PC: 0/1"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.90, 0.87, 0.80, 1.0)
+
+[node name="CpuRow" type="HBoxContainer" parent="StatsSidebar/VBox/BuildSection" unique_id=135]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="CpuIcon" type="TextureRect" parent="StatsSidebar/VBox/BuildSection/CpuRow" unique_id=136]
+layout_mode = 2
+custom_minimum_size = Vector2(22.0, 22.0)
+size_flags_vertical = 4
+texture = ExtResource("3_cpu")
+stretch_mode = 5
+modulate = Color(0.35, 0.30, 0.25, 0.45)
+
+[node name="CpuLbl" type="Label" parent="StatsSidebar/VBox/BuildSection/CpuRow" unique_id=137]
+layout_mode = 2
+text = "CPU: 0/1"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.90, 0.87, 0.80, 1.0)
+
+[node name="RamRow" type="HBoxContainer" parent="StatsSidebar/VBox/BuildSection" unique_id=138]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="RamIcon" type="TextureRect" parent="StatsSidebar/VBox/BuildSection/RamRow" unique_id=139]
+layout_mode = 2
+custom_minimum_size = Vector2(22.0, 22.0)
+size_flags_vertical = 4
+texture = ExtResource("4_ram")
+stretch_mode = 5
+modulate = Color(0.35, 0.30, 0.25, 0.45)
+
+[node name="RamLbl" type="Label" parent="StatsSidebar/VBox/BuildSection/RamRow" unique_id=140]
+layout_mode = 2
+text = "RAM: 0GB"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.90, 0.87, 0.80, 1.0)
+
+[node name="GpuRow" type="HBoxContainer" parent="StatsSidebar/VBox/BuildSection" unique_id=141]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="GpuIcon" type="TextureRect" parent="StatsSidebar/VBox/BuildSection/GpuRow" unique_id=142]
+layout_mode = 2
+custom_minimum_size = Vector2(22.0, 22.0)
+size_flags_vertical = 4
+texture = ExtResource("5_gpu")
+stretch_mode = 5
+modulate = Color(0.35, 0.30, 0.25, 0.45)
+
+[node name="GpuLbl" type="Label" parent="StatsSidebar/VBox/BuildSection/GpuRow" unique_id=143]
+layout_mode = 2
+text = "GPU: 0/2"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.90, 0.87, 0.80, 1.0)
+
+[node name="DiskRow" type="HBoxContainer" parent="StatsSidebar/VBox/BuildSection" unique_id=144]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="DiskIcon" type="TextureRect" parent="StatsSidebar/VBox/BuildSection/DiskRow" unique_id=145]
+layout_mode = 2
+custom_minimum_size = Vector2(22.0, 22.0)
+size_flags_vertical = 4
+texture = ExtResource("6_hdd")
+stretch_mode = 5
+modulate = Color(0.35, 0.30, 0.25, 0.45)
+
+[node name="DiskLbl" type="Label" parent="StatsSidebar/VBox/BuildSection/DiskRow" unique_id=146]
+layout_mode = 2
+text = "DISK: 0GB"
+theme_override_font_sizes/font_size = 11
+theme_override_colors/font_color = Color(0.90, 0.87, 0.80, 1.0)
+
+[node name="BottomBar" type="PanelContainer" parent="." unique_id=110]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -46.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_botbar")
+
+[node name="HBox" type="HBoxContainer" parent="BottomBar" unique_id=111]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="WorkBtn" type="Button" parent="BottomBar/HBox" unique_id=112]
+layout_mode = 2
+text = "WORK"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.90, 0.87, 0.80, 1.0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn")
+
+[node name="HSpacer" type="Control" parent="BottomBar/HBox" unique_id=113]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ShopBtn" type="Button" parent="BottomBar/HBox" unique_id=115]
+layout_mode = 2
+text = "SHOP"
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.55, 0.52, 0.47, 1.0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_btn")
+
+[node name="Shop" type="Control" parent="." unique_id=150]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -149,59 +319,64 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Shop" unique_id=1741942387]
+[node name="Overlay" type="ColorRect" parent="Shop" unique_id=151]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 48.0
-offset_top = 54.0
-offset_right = -50.0
-offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture1D_yf5fn")
+color = Color(0.0, 0.0, 0.0, 0.74)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Shop" unique_id=1427072384]
+[node name="Panel" type="PanelContainer" parent="Shop" unique_id=152]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -398.0
-offset_top = -168.5
-offset_right = 398.0
-offset_bottom = 168.5
+offset_left = -320.0
+offset_top = -256.0
+offset_right = 320.0
+offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_shop")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Shop/ScrollContainer" unique_id=1864034171]
+[node name="VBox" type="VBoxContainer" parent="Shop/Panel" unique_id=153]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="Shop/Panel/VBox" unique_id=154]
 layout_mode = 2
 
-[node name="TitleLbl" type="Label" parent="Shop" unique_id=1449597335]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 67.0
-offset_right = 20.0
-offset_bottom = 90.0
-grow_horizontal = 2
-text = "Shop"
-horizontal_alignment = 1
+[node name="TitleLbl" type="Label" parent="Shop/Panel/VBox/Header" unique_id=155]
+layout_mode = 2
+text = "SHOP"
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(1.0, 0.74, 0.0, 1.0)
+size_flags_horizontal = 3
 
-[node name="ExitBtn" type="Button" parent="Shop" unique_id=250324125]
-layout_mode = 0
-offset_left = 1061.0
-offset_top = 66.0
-offset_right = 1089.0
-offset_bottom = 93.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_57qmd")
-text = "X"
+[node name="ExitBtn" type="Button" parent="Shop/Panel/VBox/Header" unique_id=156]
+layout_mode = 2
+text = "✕"
+custom_minimum_size = Vector2(30.0, 30.0)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_close")
+theme_override_styles/hover = SubResource("StyleBoxFlat_close")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_close")
+theme_override_styles/focus = SubResource("StyleBoxFlat_close")
 
-[connection signal="button_down" from="WorkBtn" to="." method="_on_work_btn_button_down"]
-[connection signal="button_down" from="ShopBtn" to="." method="_on_work_btn_button_down"]
-[connection signal="button_down" from="ShopBtn" to="." method="_on_shop_btn_button_down"]
-[connection signal="button_down" from="Shop/ExitBtn" to="." method="_on_exit_btn_button_down"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Shop/Panel/VBox" unique_id=157]
+layout_mode = 2
+size_flags_vertical = 3
+custom_minimum_size = Vector2(0.0, 360.0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Shop/Panel/VBox/ScrollContainer" unique_id=158]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[connection signal="button_down" from="BottomBar/HBox/WorkBtn" to="." method="_on_work_btn_button_down"]
+[connection signal="button_down" from="BottomBar/HBox/ShopBtn" to="." method="_on_shop_btn_button_down"]
+[connection signal="button_down" from="Shop/Panel/VBox/Header/ExitBtn" to="." method="_on_exit_btn_button_down"]

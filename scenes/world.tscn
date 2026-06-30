@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c0j7vmecupfw4" path="res://scenes/map.tscn" id="1_rwgxs"]
 [ext_resource type="Texture2D" uid="uid://bhbxq1djbdc01" path="res://ressources/textures/maps/Tilemap.png" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://cayx5i53vv51e" path="res://scenes/DoorZone.tscn" id="3_door"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("2_4wyf3")
@@ -4778,3 +4779,39 @@ tile_set = SubResource("TileSet_yf5fn")
 z_index = 10
 tile_map_data = PackedByteArray("AAD8/wUAAAACAAAAAAD8/wYAAAACAAEAAAD9/wUAAAADAAAAAAD9/wYAAAADAAEAAAD+/wUAAAAEAAAAAAD+/wYAAAAEAAEAAAD//wUAAAAFAAAAAAD//wYAAAAFAAEAAAAAAAUAAAAGAAAAAAAAAAYAAAAGAAEAAAABAAUAAAAHAAAAAAABAAYAAAAHAAEAAAACAAUAAAAIAAAAAAACAAYAAAAIAAEAAAADAAYAAAAJAAEAAAAEAAUAAAACAAAAAAAEAAYAAAACAAEAAAAFAAUAAAADAAAAAAAFAAYAAAADAAEAAAAGAAUAAAAEAAAAAAAGAAYAAAAEAAEAAAAHAAUAAAAFAAAAAAAHAAYAAAAFAAEAAAAIAAUAAAAGAAAAAAAIAAYAAAAGAAEAAAAJAAUAAAAHAAAAAAAJAAYAAAAHAAEAAAAKAAUAAAAIAAAAAAAKAAYAAAAIAAEAAAALAAYAAAAJAAEAAAAkAAYAAAAQACEAAAAkAAcAAAAQACIAAAAlAAUAAAARACAAAAAlAAYAAAARACEAAAAlAAcAAAARACIAAAAmAAUAAAASACAAAAAmAAYAAAASACEAAAAmAAcAAAASACIAAAAnAAUAAAATACAAAAAnAAYAAAATACEAAAAnAAcAAAATACIAAAAoAAUAAAAUACAAAAAoAAYAAAAUACEAAAAoAAcAAAAUACIAAAApAAYAAAAVACEAAAApAAcAAAAVACIAAAD8/wcAAAACAAIAAAD9/wcAAAADAAIAAAD+/wcAAAAEAAIAAAD//wcAAAAFAAIAAAAAAAcAAAAGAAIAAAABAAcAAAAHAAIAAAACAAcAAAAIAAIAAAADAAcAAAAJAAIAAAAEAAcAAAACAAIAAAAFAAcAAAADAAIAAAAGAAcAAAAEAAIAAAAHAAcAAAAFAAIAAAAIAAcAAAAGAAIAAAAJAAcAAAAHAAIAAAAKAAcAAAAIAAIAAAALAAcAAAAJAAIAAAAkAAgAAAAQACMAAAAlAAgAAAARACMAAAAmAAgAAAASACMAAAAnAAgAAAATACMAAAAoAAgAAAAUACMAAAApAAgAAAAVACMAAAAMAAgAAAACAAwAAAANAAgAAAADAAwAAAAOAAgAAAAEAAwAAAAPAAgAAAAFAAwAAAAQAAgAAAAGAAwAAAARAAgAAAAHAAwAAAASAAgAAAAIAAwAAAATAAgAAAAJAAwAAAA=")
 tile_set = SubResource("TileSet_57qmd")
+
+[node name="SpawnInterior" type="Node2D" parent="." unique_id=987654321]
+position = Vector2(624, 257)
+
+[node name="DoorBuilding" parent="." unique_id=876543210 instance=ExtResource("3_door")]
+position = Vector2(624, 253)
+scale = Vector2(1.6, 0.43999022)
+target_scene = "res://scenes/game/levels/interior.tscn"
+spawn_point = "SpawnEntrance"
+
+[node name="SpawnHouse" type="Node2D" parent="." unique_id=800000001]
+position = Vector2(250, 257)
+
+[node name="DoorHouse" parent="." unique_id=800000002 instance=ExtResource("3_door")]
+position = Vector2(250, 253)
+scale = Vector2(1.6, 0.43999022)
+target_scene = "res://scenes/game/levels/house.tscn"
+spawn_point = "SpawnEntrance"
+
+[node name="SpawnShop" type="Node2D" parent="." unique_id=800000003]
+position = Vector2(450, 257)
+
+[node name="DoorShop" parent="." unique_id=800000004 instance=ExtResource("3_door")]
+position = Vector2(450, 253)
+scale = Vector2(1.6, 0.43999022)
+target_scene = "res://scenes/game/levels/shop.tscn"
+spawn_point = "SpawnEntrance"
+
+[node name="SpawnThriftShop" type="Node2D" parent="." unique_id=800000005]
+position = Vector2(850, 257)
+
+[node name="DoorThriftShop" parent="." unique_id=800000006 instance=ExtResource("3_door")]
+position = Vector2(850, 253)
+scale = Vector2(1.6, 0.43999022)
+target_scene = "res://scenes/game/levels/thrift_shop.tscn"
+spawn_point = "SpawnEntrance"

@@ -19,9 +19,13 @@ config/icon="res://icon.svg"
 
 SoundManager="*uid://d4br1tqxdr5bn"
 Game="*uid://b7v660vncmi15"
+Systems="*uid://u42w27ikvysb"
+UITheme="*res://core/autoload/ui_theme.gd"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

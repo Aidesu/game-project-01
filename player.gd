@@ -4,6 +4,9 @@ var speed = 150
 
 @onready var sprite = $AnimatedSprite2D
 
+func _ready() -> void:
+	add_to_group("player")
+
 func _physics_process(delta):
 	var dir = Vector2.ZERO
 
