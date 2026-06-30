@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="game-project-02"
-run/main_scene="uid://bua8n8iyoitob"
+run/main_scene="uid://b57inmkjmqlv5"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SoundManager="*uid://d4br1tqxdr5bn"
+Game="*uid://b7v660vncmi15"
 
 [display]
 

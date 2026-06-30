@@ -123,6 +123,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 6.0
+height = 12.0
 
 [node name="Player" type="CharacterBody2D" unique_id=149832289]
 script = ExtResource("1_g2els")
@@ -130,7 +132,8 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=557383292]
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 animation = &"walk_b"
-frame_progress = 0.09995595
+frame_progress = 0.18709025
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=856965830]
+position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_g4v7s")

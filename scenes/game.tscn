@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://da5hm27nicuds" path="res://scenes/world.tscn" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cuxqe1txobhxl" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://u42w27ikvysb" path="res://scenes/systems.gd" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://di11ee8jh6jjw" path="res://scenes/main.tscn" id="3_lnu2h"]
 
 [node name="Game" type="Node" unique_id=1794463850]
@@ -12,6 +13,12 @@
 
 [node name="Player" parent="World" unique_id=149832289 instance=ExtResource("1_uwrxv")]
 
-[node name="Main" parent="." unique_id=1809280691 instance=ExtResource("3_lnu2h")]
+[node name="Camera2D" type="Camera2D" parent="World/Player" unique_id=568999745]
+zoom = Vector2(3, 3)
 
 [node name="Systems" type="Node" parent="." unique_id=371237240]
+script = ExtResource("3_lbhrr")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=312898817]
+
+[node name="Main" parent="HUD" unique_id=1809280691 instance=ExtResource("3_lnu2h")]
