@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://transition_iris01"]
+
+[ext_resource type="Script" path="res://scripts/transition.gd" id="1_trans"]
+
+[sub_resource type="Shader" id="Shader_iris"]
+code = "shader_type canvas_item;
+uniform float progress : hint_range(0.0, 1.0) = 1.0;
+
+void fragment() {
+	vec2 uv = UV - vec2(0.5);
+	float aspect = SCREEN_PIXEL_SIZE.y / SCREEN_PIXEL_SIZE.x;
+	uv.x *= aspect;
+	float dist = length(uv);
+	float radius = progress * 1.5;
+	COLOR = vec4(0.0, 0.0, 0.0, step(radius, dist));
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iris"]
+shader = SubResource("Shader_iris")
+shader_parameter/progress = 1.0
+
+[node name="Transition" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_trans")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+material = SubResource("ShaderMaterial_iris")

@@ -3,21 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cayx5i53vv51e" path="res://scenes/DoorZone.tscn" id="1_dzone"]
 [ext_resource type="Texture2D" uid="uid://cnp11phubagjm" path="res://ressources/textures/maps/interior/InteriorTilesLITE.png" id="2_nyxxl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_top"]
-size = Vector2(256, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_bottom"]
-size = Vector2(256, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_left"]
-size = Vector2(16, 192)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_right"]
-size = Vector2(16, 192)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_exit"]
-size = Vector2(32, 16)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttaxh"]
 texture = ExtResource("2_nyxxl")
 0:0/0 = 0
@@ -636,6 +621,21 @@ texture = ExtResource("2_nyxxl")
 [sub_resource type="TileSet" id="TileSet_g4v7s"]
 sources/0 = SubResource("TileSetAtlasSource_ttaxh")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_top"]
+size = Vector2(256, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_bottom"]
+size = Vector2(256, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_left"]
+size = Vector2(16, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_right"]
+size = Vector2(16, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exit"]
+size = Vector2(32, 16)
+
 [node name="Interior" type="Node2D" unique_id=1014482541]
 
 [node name="Background" type="ColorRect" parent="." unique_id=1157277720]
@@ -644,6 +644,10 @@ offset_top = -96.0
 offset_right = 128.0
 offset_bottom = 96.0
 color = Color(0.22, 0.18, 0.14, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=524482026]
+tile_map_data = PackedByteArray("AAD6//j/AAACAAoAAAD6//n/AAACAAsAAAD6//r/AAACAAwAAAD6//v/AAACAA0AAAD7//j/AAADAAoAAAD7//n/AAADAAsAAAD7//r/AAADAAwAAAD7//v/AAADAA0AAAD4//z/AAAYAAkAAAD4//3/AAAYAAoAAAD5//z/AAAdAAkAAAD5//3/AAAdAAoAAAD4//r/AAAYAAcAAAD4//v/AAAYAAgAAAD5//r/AAAdAAcAAAD5//v/AAAdAAgAAAAGAP//AAAeABgAAAAGAAAAAAAeABkAAAAGAAEAAAAeABoAAAAGAAIAAAAeABsAAAAHAP//AAAfABgAAAAHAAAAAAAfABkAAAAHAAEAAAAfABoAAAAHAAIAAAAfABsAAAAAAPr/AAAGAA0AAAAAAPv/AAAGAA4AAAABAPr/AAAHAA0AAAABAPv/AAAHAA4AAAACAPn/AAAIAAwAAAACAPr/AAAIAA0AAAACAPv/AAAIAA4AAAADAPn/AAAJAAwAAAADAPr/AAAJAA0AAAADAPv/AAAJAA4AAAAEAPr/AAAOAAsAAAAEAPv/AAAPAAoAAAAFAPr/AAAOAAsAAAAFAPv/AAAPAAoAAAAEAPn/AAAKAAsAAAAFAPn/AAALAAsAAAAGAPr/AAAOAAsAAAAGAPv/AAAQAAoAAAAHAPr/AAAOAAsAAAAHAPv/AAAOAAwAAAAHAPz/AAAOAA0AAAAHAP3/AAAOAA4AAAAGAPn/AAAIAAsAAAAHAPn/AAAJAAsAAAD4/wIAAAAOABYAAAD4/wMAAAAOABcAAAD4/wQAAAAOABgAAAD4/wUAAAAOABkAAAD5/wIAAAAPABYAAAD5/wMAAAAPABcAAAD5/wQAAAAPABgAAAD5/wUAAAAPABkAAAA=")
+tile_set = SubResource("TileSet_g4v7s")
 
 [node name="WallTop" type="StaticBody2D" parent="." unique_id=1157669804]
 position = Vector2(0, -96)
@@ -670,16 +674,12 @@ position = Vector2(128, 0)
 shape = SubResource("RectangleShape2D_wall_right")
 
 [node name="SpawnEntrance" type="Node2D" parent="." unique_id=862226902]
-position = Vector2(0, 52)
+position = Vector2(0, 63)
 
 [node name="DoorExit" parent="." unique_id=2075281512 instance=ExtResource("1_dzone")]
-position = Vector2(0, 80)
+position = Vector2(0, 93)
 target_scene = "res://scenes/world.tscn"
 spawn_point = "SpawnInterior"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DoorExit" unique_id=236080415]
 shape = SubResource("RectangleShape2D_exit")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=524482026]
-tile_map_data = PackedByteArray("AAD6//j/AAACAAoAAAD6//n/AAACAAsAAAD6//r/AAACAAwAAAD6//v/AAACAA0AAAD7//j/AAADAAoAAAD7//n/AAADAAsAAAD7//r/AAADAAwAAAD7//v/AAADAA0AAAD4//z/AAAYAAkAAAD4//3/AAAYAAoAAAD5//z/AAAdAAkAAAD5//3/AAAdAAoAAAD4//r/AAAYAAcAAAD4//v/AAAYAAgAAAD5//r/AAAdAAcAAAD5//v/AAAdAAgAAAAGAP//AAAeABgAAAAGAAAAAAAeABkAAAAGAAEAAAAeABoAAAAGAAIAAAAeABsAAAAHAP//AAAfABgAAAAHAAAAAAAfABkAAAAHAAEAAAAfABoAAAAHAAIAAAAfABsAAAAAAPr/AAAGAA0AAAAAAPv/AAAGAA4AAAABAPr/AAAHAA0AAAABAPv/AAAHAA4AAAACAPn/AAAIAAwAAAACAPr/AAAIAA0AAAACAPv/AAAIAA4AAAADAPn/AAAJAAwAAAADAPr/AAAJAA0AAAADAPv/AAAJAA4AAAAEAPr/AAAOAAsAAAAEAPv/AAAPAAoAAAAFAPr/AAAOAAsAAAAFAPv/AAAPAAoAAAAEAPn/AAAKAAsAAAAFAPn/AAALAAsAAAAGAPr/AAAOAAsAAAAGAPv/AAAQAAoAAAAHAPr/AAAOAAsAAAAHAPv/AAAOAAwAAAAHAPz/AAAOAA0AAAAHAP3/AAAOAA4AAAAGAPn/AAAIAAsAAAAHAPn/AAAJAAsAAAD4/wIAAAAOABYAAAD4/wMAAAAOABcAAAD4/wQAAAAOABgAAAD4/wUAAAAOABkAAAD5/wIAAAAPABYAAAD5/wMAAAAPABcAAAD5/wQAAAAPABgAAAD5/wUAAAAPABkAAAA=")
-tile_set = SubResource("TileSet_g4v7s")

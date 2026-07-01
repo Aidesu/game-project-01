@@ -13,9 +13,12 @@ func _ready() -> void:
 		Game.spawn_point = ""
 
 func _on_travel_requested(scene_path: String, spawn_name: String) -> void:
+	await Transition.close()
+
 	var packed: PackedScene = load(scene_path)
 	if not packed:
 		push_error("GameScene: cannot load scene: " + scene_path)
+		Transition.open()
 		return
 	current_level.queue_free()
 	current_level = packed.instantiate()
@@ -23,6 +26,8 @@ func _on_travel_requested(scene_path: String, spawn_name: String) -> void:
 	world_root.move_child(current_level, 0)
 	await get_tree().process_frame
 	_place_player_at(spawn_name)
+
+	Transition.open()
 
 func _place_player_at(spawn_name: String) -> void:
 	var marker: Node = current_level.get_node_or_null(spawn_name)

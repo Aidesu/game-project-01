@@ -2,52 +2,6 @@
 
 [ext_resource type="Script" uid="uid://da51gac4a3mb1" path="res://core/autoload/main_menu.gd" id="1_38o7l"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
-bg_color = Color(0.060, 0.056, 0.070, 1.0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_title"]
-bg_color = Color(0.082, 0.078, 0.095, 0.97)
-border_width_top = 2
-border_width_bottom = 2
-border_color = Color(1.0, 0.74, 0.0, 1.0)
-content_margin_left = 32.0
-content_margin_right = 32.0
-content_margin_top = 18.0
-content_margin_bottom = 18.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
-bg_color = Color(0.082, 0.078, 0.095, 0.97)
-border_width_left = 2
-border_width_right = 2
-border_width_top = 2
-border_width_bottom = 2
-border_color = Color(1.0, 0.74, 0.0, 1.0)
-content_margin_left = 24.0
-content_margin_right = 24.0
-content_margin_top = 20.0
-content_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn"]
-bg_color = Color(0.0, 0.0, 0.0, 0.0)
-content_margin_left = 24.0
-content_margin_right = 24.0
-content_margin_top = 10.0
-content_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_h"]
-bg_color = Color(1.0, 0.74, 0.0, 0.10)
-content_margin_left = 24.0
-content_margin_right = 24.0
-content_margin_top = 10.0
-content_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_p"]
-bg_color = Color(1.0, 0.74, 0.0, 0.20)
-content_margin_left = 24.0
-content_margin_right = 24.0
-content_margin_top = 10.0
-content_margin_bottom = 10.0
-
 [node name="MainMenu" type="Control" unique_id=478888896]
 layout_mode = 3
 anchors_preset = 15
@@ -56,16 +10,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_38o7l")
-
-[node name="BgRect" type="PanelContainer" parent="." unique_id=100]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=200]
 layout_mode = 1
@@ -80,72 +24,42 @@ layout_mode = 2
 custom_minimum_size = Vector2(300.0, 0.0)
 theme_override_constants/separation = 20
 
-[node name="TitleBox" type="PanelContainer" parent="CenterContainer/VBox" unique_id=202]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_title")
-
-[node name="TitleVBox" type="VBoxContainer" parent="CenterContainer/VBox/TitleBox" unique_id=203]
+[node name="TitleBox" type="VBoxContainer" parent="CenterContainer/VBox" unique_id=202]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="Title" type="Label" parent="CenterContainer/VBox/TitleBox/TitleVBox" unique_id=204]
+[node name="Title" type="Label" parent="CenterContainer/VBox/TitleBox" unique_id=204]
 layout_mode = 2
 text = "PC EMPIRE"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 32
-theme_override_colors/font_color = Color(1.0, 0.74, 0.0, 1.0)
 
-[node name="SubTitle" type="Label" parent="CenterContainer/VBox/TitleBox/TitleVBox" unique_id=205]
+[node name="SubTitle" type="Label" parent="CenterContainer/VBox/TitleBox" unique_id=205]
 layout_mode = 2
 text = "BUILD YOUR EMPIRE"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 11
-theme_override_colors/font_color = Color(0.55, 0.52, 0.47, 1.0)
 
-[node name="ButtonPanel" type="PanelContainer" parent="CenterContainer/VBox" unique_id=210]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
-
-[node name="BtnVBox" type="VBoxContainer" parent="CenterContainer/VBox/ButtonPanel" unique_id=211]
+[node name="BtnVBox" type="VBoxContainer" parent="CenterContainer/VBox" unique_id=211]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="PlayBtn" type="Button" parent="CenterContainer/VBox/ButtonPanel/BtnVBox" unique_id=212]
+[node name="PlayBtn" type="Button" parent="CenterContainer/VBox/BtnVBox" unique_id=212]
 layout_mode = 2
 text = "PLAY"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 14
-theme_override_colors/font_color = Color(1.0, 0.74, 0.0, 1.0)
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_h")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_p")
-theme_override_styles/focus = SubResource("StyleBoxFlat_btn")
 
-[node name="Sep" type="HSeparator" parent="CenterContainer/VBox/ButtonPanel/BtnVBox" unique_id=220]
+[node name="Sep" type="HSeparator" parent="CenterContainer/VBox/BtnVBox" unique_id=220]
 layout_mode = 2
 
-[node name="SettingsBtn" type="Button" parent="CenterContainer/VBox/ButtonPanel/BtnVBox" unique_id=213]
+[node name="SettingsBtn" type="Button" parent="CenterContainer/VBox/BtnVBox" unique_id=213]
 layout_mode = 2
 text = "SETTINGS"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 12
-theme_override_colors/font_color = Color(0.90, 0.87, 0.80, 1.0)
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_h")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_p")
-theme_override_styles/focus = SubResource("StyleBoxFlat_btn")
 
-[node name="QuitBtn" type="Button" parent="CenterContainer/VBox/ButtonPanel/BtnVBox" unique_id=214]
+[node name="QuitBtn" type="Button" parent="CenterContainer/VBox/BtnVBox" unique_id=214]
 layout_mode = 2
 text = "QUIT"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 12
-theme_override_colors/font_color = Color(0.55, 0.52, 0.47, 1.0)
-theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_btn_h")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_p")
-theme_override_styles/focus = SubResource("StyleBoxFlat_btn")
 
-[connection signal="button_down" from="CenterContainer/VBox/ButtonPanel/BtnVBox/PlayBtn" to="." method="_on_play_btn_button_down"]
-[connection signal="button_down" from="CenterContainer/VBox/ButtonPanel/BtnVBox/SettingsBtn" to="." method="_on_settings_btn_button_down"]
-[connection signal="button_down" from="CenterContainer/VBox/ButtonPanel/BtnVBox/QuitBtn" to="." method="_on_quit_btn_button_down"]
+[connection signal="button_down" from="CenterContainer/VBox/BtnVBox/PlayBtn" to="." method="_on_play_btn_button_down"]
+[connection signal="button_down" from="CenterContainer/VBox/BtnVBox/SettingsBtn" to="." method="_on_settings_btn_button_down"]
+[connection signal="button_down" from="CenterContainer/VBox/BtnVBox/QuitBtn" to="." method="_on_quit_btn_button_down"]

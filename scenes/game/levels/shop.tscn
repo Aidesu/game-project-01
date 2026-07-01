@@ -1363,10 +1363,10 @@ position = Vector2(128, 0)
 shape = SubResource("RectangleShape2D_wall_right")
 
 [node name="SpawnEntrance" type="Node2D" parent="." unique_id=710000012]
-position = Vector2(0, 52)
+position = Vector2(0, 63)
 
 [node name="DoorExit" parent="." unique_id=710000013 instance=ExtResource("1_dzone")]
-position = Vector2(0, 80)
+position = Vector2(0, 92)
 target_scene = "res://scenes/world.tscn"
 spawn_point = "SpawnShop"
 
