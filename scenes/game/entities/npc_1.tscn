@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://c1fxaf5r0v5ae"]
+
+[ext_resource type="Texture2D" uid="uid://dsv6ix5ap1kt7" path="res://ressources/textures/characters/vPR0Fjj.png" id="1_ns45i"]
+[ext_resource type="Script" uid="uid://cjkxw422b8kw8" path="res://scripts/npc.gd" id="2_npcsc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns45i"]
+atlas = ExtResource("1_ns45i")
+region = Rect2(224, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns45i")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 35.0
+
+[node name="NPC-1" type="Node2D" unique_id=1393481332]
+script = ExtResource("2_npcsc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1506213683]
+position = Vector2(-2, -3)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"idle"
+
+[node name="InteractionZone" type="Area2D" parent="." unique_id=1556039094]
+position = Vector2(-2, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=338362750]
+position = Vector2(2, 3)
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="UseButton" type="Button" parent="." unique_id=200000001]
+position = Vector2(-30, -55)
+size = Vector2(60, 20)
+text = "Utiliser"
+
+[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=200000002]
+
+[node name="DialoguePanel" type="Panel" parent="DialogueUI" unique_id=200000003]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -75.0
+offset_right = 100.0
+offset_bottom = 75.0
+
+[node name="VBox" type="VBoxContainer" parent="DialogueUI/DialoguePanel" unique_id=200000004]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="BtnTrade" type="Button" parent="DialogueUI/DialoguePanel/VBox" unique_id=200000005]
+size_flags_vertical = 3
+text = "Échange"
+
+[node name="BtnStory" type="Button" parent="DialogueUI/DialoguePanel/VBox" unique_id=200000006]
+size_flags_vertical = 3
+text = "Parler"
+
+[node name="BtnBye" type="Button" parent="DialogueUI/DialoguePanel/VBox" unique_id=200000007]
+size_flags_vertical = 3
+text = "Au revoir"
+
+[node name="TradePanel" type="Panel" parent="DialogueUI" unique_id=200000008]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -100.0
+offset_right = 120.0
+offset_bottom = 100.0
+
+[node name="Label" type="Label" parent="DialogueUI/TradePanel" unique_id=200000009]
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 30.0
+text = "Menu d'échange"
+horizontal_alignment = 1
+
+[node name="BtnBack" type="Button" parent="DialogueUI/TradePanel" unique_id=200000010]
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -35.0
+offset_right = -10.0
+offset_bottom = -10.0
+text = "Retour"
+
+[node name="StoryPanel" type="Panel" parent="DialogueUI" unique_id=200000011]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -80.0
+offset_right = 150.0
+offset_bottom = 80.0
+
+[node name="StoryLabel" type="Label" parent="DialogueUI/StoryPanel" unique_id=200000012]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -50.0
+autowrap_mode = 3
+text = "..."
+
+[node name="NextButton" type="Button" parent="DialogueUI/StoryPanel" unique_id=200000013]
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -40.0
+offset_right = -10.0
+offset_bottom = -10.0
+text = "Suivant"

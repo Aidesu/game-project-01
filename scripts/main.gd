@@ -55,27 +55,27 @@ func _on_inventory_changed(type: String) -> void:
 		"mobo":
 			owned = int(inv["mobo"]["count"]) > 0
 			mobo_icon.modulate = bright if owned else dim
-			pc_label.text = "%d/1  (%d slots)" % [inv["mobo"]["count"], inv["mobo"]["ram_slots"]]
+			pc_label.text = "%d/%d" % [inv["mobo"]["count"], Systems.MAX_MOBO]
 		"cpu":
 			owned = int(inv["cpu"]["count"]) > 0
 			cpu_icon.modulate = bright if owned else dim
-			cpu_label.text = "%d/%d  (%dc)" % [inv["cpu"]["count"], Systems.MAX_CPU, inv["cpu"]["cores"]]
+			cpu_label.text = "%d/%d  (%dc)" % [inv["cpu"]["count"], Systems.get_cpu_slots(), inv["cpu"]["cores"]]
 		"ram":
 			owned = int(inv["ram"]["count"]) > 0
 			ram_icon.modulate = bright if owned else dim
-			ram_label.text = "%d/%d  (%dGB)" % [inv["ram"]["count"], Systems.get_ram_slots(), inv["ram"]["gb"]]
+			ram_label.text = "%d/%d  (%s)" % [inv["ram"]["count"], Systems.get_ram_slots(), Systems.format_storage(inv["ram"]["gb"])]
 		"gpu":
 			owned = int(inv["gpu"]["count"]) > 0
 			gpu_icon.modulate = bright if owned else dim
-			gpu_label.text = "%d/%d  (%dTF)" % [inv["gpu"]["count"], Systems.MAX_GPU, inv["gpu"]["tflops"]]
+			gpu_label.text = "%d/%d  (%dTF)" % [inv["gpu"]["count"], Systems.get_gpu_slots(), inv["gpu"]["tflops"]]
 		"disk":
 			owned = int(inv["disk"]["count"]) > 0
 			disk_icon.modulate = bright if owned else dim
-			disk_label.text = "%d/%d  (%dGB)" % [inv["disk"]["count"], Systems.MAX_DISK, inv["disk"]["gb"]]
+			disk_label.text = "%d/%d  (%s)" % [inv["disk"]["count"], Systems.get_disk_slots(), Systems.format_storage(inv["disk"]["gb"])]
 
 func _on_work_btn_button_down() -> void:
 	SoundManager.play_sound("pressing")
-	Systems.add_money(10)
+	Systems.add_money(100)
 	Systems.add_xp(25)
 
 func _on_shop_btn_button_down() -> void:

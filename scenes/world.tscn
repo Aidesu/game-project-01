@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c0j7vmecupfw4" path="res://scenes/map.tscn" id="1_rwgxs"]
 [ext_resource type="Texture2D" uid="uid://bhbxq1djbdc01" path="res://ressources/textures/maps/Tilemap.png" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://cayx5i53vv51e" path="res://scenes/DoorZone.tscn" id="3_door"]
+[ext_resource type="PackedScene" uid="uid://c1fxaf5r0v5ae" path="res://scenes/game/entities/npc_1.tscn" id="4_k0juu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0juu"]
 texture = ExtResource("2_4wyf3")
@@ -4816,3 +4817,6 @@ position = Vector2(433, 256)
 scale = Vector2(4.320005, 0.43999022)
 target_scene = "res://scenes/game/levels/thrift_shop.tscn"
 spawn_point = "SpawnEntrance"
+
+[node name="NPC-1" parent="." unique_id=1393481332 instance=ExtResource("4_k0juu")]
+position = Vector2(367, 248)

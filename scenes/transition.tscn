@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://transition_iris01"]
 
-[ext_resource type="Script" path="res://scripts/transition.gd" id="1_trans"]
+[ext_resource type="Script" path="res://core/autoload/transition.gd" id="1_trans"]
 
 [sub_resource type="Shader" id="Shader_iris"]
 code = "shader_type canvas_item;

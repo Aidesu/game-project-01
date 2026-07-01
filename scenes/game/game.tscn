@@ -20,3 +20,4 @@ zoom = Vector2(3, 3)
 [node name="HUD" type="CanvasLayer" parent="." unique_id=312898817]
 
 [node name="Main" parent="HUD" unique_id=1809280691 instance=ExtResource("3_lnu2h")]
+mouse_filter = 0

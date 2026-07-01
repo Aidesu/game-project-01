@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://di11ee8jh6jjw"]
 
-[ext_resource type="Script" uid="uid://ccamk4m7k8arw" path="res://core/autoload/main.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://ccamk4m7k8arw" path="res://scripts/main.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://csy6j1t7hdkqk" path="res://ressources/textures/ui/cyberpunkgui/Logo1.png" id="2_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://dbt7fkw08sqdl" path="res://ressources/textures/ui/logo/Mobo.png" id="3_tipki"]
 [ext_resource type="Texture2D" uid="uid://cw1vo3u2a4sji" path="res://ressources/textures/ui/logo/CPU.png" id="4_85g3d"]
@@ -15,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_script")
 
 [node name="TopBar" type="PanelContainer" parent="." unique_id=101]
@@ -238,6 +239,7 @@ stretch_mode = 5
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "0/1"
+horizontal_alignment = 1
 
 [node name="CpuRow" type="VBoxContainer" parent="DataLabel/HBoxContainer" unique_id=880969100]
 layout_mode = 2
@@ -256,6 +258,7 @@ stretch_mode = 5
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "0/1"
+horizontal_alignment = 1
 
 [node name="RamRow" type="VBoxContainer" parent="DataLabel/HBoxContainer" unique_id=67103623]
 layout_mode = 2
@@ -274,6 +277,7 @@ stretch_mode = 5
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "0GB"
+horizontal_alignment = 1
 
 [node name="GpuRow" type="VBoxContainer" parent="DataLabel/HBoxContainer" unique_id=708269137]
 layout_mode = 2
@@ -292,6 +296,7 @@ stretch_mode = 5
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "0/2"
+horizontal_alignment = 1
 
 [node name="DiskRow" type="VBoxContainer" parent="DataLabel/HBoxContainer" unique_id=1028970250]
 layout_mode = 2
@@ -310,6 +315,7 @@ stretch_mode = 5
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "0GB"
+horizontal_alignment = 1
 
 [connection signal="button_down" from="BottomBar/HBox/WorkBtn" to="." method="_on_work_btn_button_down"]
 [connection signal="button_down" from="BottomBar/HBox/ShopBtn" to="." method="_on_shop_btn_button_down"]
