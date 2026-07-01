@@ -3,37 +3,37 @@
 [ext_resource type="Script" uid="uid://cg3lgpay3c6dm" path="res://scripts/menu/settings.gd" id="1_ghr4u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
-bg_color = Color(0.060, 0.056, 0.070, 1.0)
+bg_color = Color(0.06, 0.056, 0.07, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
-bg_color = Color(0.082, 0.078, 0.095, 1.0)
-border_width_left = 2
-border_color = Color(1.0, 0.74, 0.0, 1.0)
 content_margin_left = 28.0
-content_margin_right = 28.0
 content_margin_top = 24.0
+content_margin_right = 28.0
 content_margin_bottom = 24.0
+bg_color = Color(0.082, 0.078, 0.095, 1)
+border_width_left = 2
+border_color = Color(1, 0.74, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_back_n"]
-bg_color = Color(0.0, 0.0, 0.0, 0.0)
 content_margin_left = 20.0
-content_margin_right = 20.0
 content_margin_top = 8.0
-content_margin_bottom = 8.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_back_h"]
-bg_color = Color(1.0, 0.74, 0.0, 0.12)
-content_margin_left = 20.0
 content_margin_right = 20.0
-content_margin_top = 8.0
 content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_back_p"]
-bg_color = Color(1.0, 0.74, 0.0, 0.22)
 content_margin_left = 20.0
-content_margin_right = 20.0
 content_margin_top = 8.0
+content_margin_right = 20.0
 content_margin_bottom = 8.0
+bg_color = Color(1, 0.74, 0, 0.22)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_back_h"]
+content_margin_left = 20.0
+content_margin_top = 8.0
+content_margin_right = 20.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 0.74, 0, 0.12)
 
 [node name="Settings" type="Control" unique_id=2121681688]
 layout_mode = 3
@@ -63,7 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Card" type="PanelContainer" parent="CenterContainer" unique_id=201]
-custom_minimum_size = Vector2(380.0, 0.0)
+custom_minimum_size = Vector2(380, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_card")
 
@@ -73,10 +73,10 @@ theme_override_constants/separation = 28
 
 [node name="Title" type="Label" parent="CenterContainer/Card/VBox" unique_id=203]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.87, 0.8, 1)
+theme_override_font_sizes/font_size = 20
 text = "SETTINGS"
 horizontal_alignment = 1
-theme_override_font_sizes/font_size = 20
-theme_override_colors/font_color = Color(0.90, 0.87, 0.80, 1.0)
 
 [node name="AccentSection" type="VBoxContainer" parent="CenterContainer/Card/VBox" unique_id=210]
 layout_mode = 2
@@ -84,9 +84,9 @@ theme_override_constants/separation = 12
 
 [node name="AccentLabel" type="Label" parent="CenterContainer/Card/VBox/AccentSection" unique_id=211]
 layout_mode = 2
-text = "ACCENT COLOR"
+theme_override_colors/font_color = Color(0.55, 0.52, 0.47, 1)
 theme_override_font_sizes/font_size = 11
-theme_override_colors/font_color = Color(0.55, 0.52, 0.47, 1.0)
+text = "ACCENT COLOR"
 
 [node name="SwatchRow" type="HBoxContainer" parent="CenterContainer/Card/VBox/AccentSection" unique_id=212]
 layout_mode = 2
@@ -94,12 +94,12 @@ theme_override_constants/separation = 10
 
 [node name="BackBtn" type="Button" parent="CenterContainer/Card/VBox" unique_id=525176492]
 layout_mode = 2
-text = "BACK"
+theme_override_colors/font_color = Color(0.55, 0.52, 0.47, 1)
 theme_override_font_sizes/font_size = 12
-theme_override_colors/font_color = Color(0.55, 0.52, 0.47, 1.0)
 theme_override_styles/normal = SubResource("StyleBoxFlat_back_n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_back_h")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_back_p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_back_h")
 theme_override_styles/focus = SubResource("StyleBoxFlat_back_n")
+text = "BACK"
 
 [connection signal="button_down" from="CenterContainer/Card/VBox/BackBtn" to="." method="_on_back_btn_button_down"]
