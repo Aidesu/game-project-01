@@ -7,6 +7,9 @@ const DURATION := 0.2
 func _ready() -> void:
 	_set_progress(1.0)
 
+func snap_closed() -> void:
+	_set_progress(0.0)
+
 func close() -> void:
 	await _animate(1.0, 0.0)
 

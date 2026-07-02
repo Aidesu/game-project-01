@@ -8,6 +8,12 @@ func _ready() -> void:
 	add_to_group("player")
 
 func _physics_process(delta):
+	if Cinematic.active:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		update_animation(Vector2.ZERO)
+		return
+
 	var dir = Vector2.ZERO
 
 	if Input.is_action_pressed("move_right"):

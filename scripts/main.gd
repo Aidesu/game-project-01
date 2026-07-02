@@ -1,20 +1,19 @@
 extends Control
 
-@onready var money_label     = $TopBar/HBox/MoneyBox/MoneyLbl
-@onready var earn_label      = $TopBar/HBox/MoneyBox/EarnLbl
-@onready var lvl_label       = $TopBar/HBox/LevelBox/LvlLbl
-@onready var xp_bar          = $TopBar/HBox/LevelBox/XpBar
-@onready var earn_rate_label = $StatsSidebar/VBox/IncomeValueLbl
-@onready var pc_label        = $DataLabel/HBoxContainer/MoboRow/MoboLbl
-@onready var cpu_label       = $DataLabel/HBoxContainer/CpuRow/CpuLbl
-@onready var ram_label       = $DataLabel/HBoxContainer/RamRow/RamLbl
-@onready var gpu_label       = $DataLabel/HBoxContainer/GpuRow/GpuLbl
-@onready var disk_label      = $DataLabel/HBoxContainer/DiskRow/DiskLbl
-@onready var mobo_icon       = $DataLabel/HBoxContainer/MoboRow/MoboIcon
-@onready var cpu_icon        = $DataLabel/HBoxContainer/CpuRow/CpuIcon
-@onready var ram_icon        = $DataLabel/HBoxContainer/RamRow/RamIcon
-@onready var gpu_icon        = $DataLabel/HBoxContainer/GpuRow/GpuIcon
-@onready var disk_icon       = $DataLabel/HBoxContainer/DiskRow/DiskIcon
+@onready var money_label     = $DataLabel/NinePatchRect/MoneyBox/MoneyLbl
+@onready var earn_label      = $DataLabel/NinePatchRect/MoneyBox/EarnLbl
+@onready var lvl_label       = $DataLabel/NinePatchRect/LvlLbl
+@onready var xp_bar          = $DataLabel/NinePatchRect/XpBar
+@onready var pc_label        = $DataLabel/NinePatchRect/HBoxContainer/MoboRow/MoboLbl
+@onready var cpu_label       = $DataLabel/NinePatchRect/HBoxContainer/CpuRow/CpuLbl
+@onready var ram_label       = $DataLabel/NinePatchRect/HBoxContainer/RamRow/RamLbl
+@onready var gpu_label       = $DataLabel/NinePatchRect/HBoxContainer/GpuRow/GpuLbl
+@onready var disk_label      = $DataLabel/NinePatchRect/HBoxContainer/DiskRow/DiskLbl
+@onready var mobo_icon       = $DataLabel/NinePatchRect/HBoxContainer/MoboRow/MoboIcon
+@onready var cpu_icon        = $DataLabel/NinePatchRect/HBoxContainer/CpuRow/CpuIcon
+@onready var ram_icon        = $DataLabel/NinePatchRect/HBoxContainer/RamRow/RamIcon
+@onready var gpu_icon        = $DataLabel/NinePatchRect/HBoxContainer/GpuRow/GpuIcon
+@onready var disk_icon       = $DataLabel/NinePatchRect/HBoxContainer/DiskRow/DiskIcon
 @onready var shop_list       = $Shop/Panel/VBox/ScrollContainer/VBoxContainer
 
 func _ready() -> void:
@@ -44,7 +43,6 @@ func _on_xp_changed(xp: int, lvl: int, lvl_xp: int) -> void:
 func _on_earn_rate_changed(_rate: float) -> void:
 	var fmt := Systems.format_earn()
 	earn_label.text = "+" + fmt
-	earn_rate_label.text = "+" + fmt
 
 func _on_inventory_changed(type: String) -> void:
 	var inv    := Systems.inventory
@@ -75,7 +73,7 @@ func _on_inventory_changed(type: String) -> void:
 
 func _on_work_btn_button_down() -> void:
 	SoundManager.play_sound("pressing")
-	Systems.add_money(100)
+	Systems.add_money(1000)
 	Systems.add_xp(25)
 
 func _on_shop_btn_button_down() -> void:

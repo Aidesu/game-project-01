@@ -30,12 +30,12 @@ theme_override_constants/separation = 4
 
 [node name="Title" type="Label" parent="CenterContainer/VBox/TitleBox" unique_id=204]
 layout_mode = 2
-text = "PC EMPIRE"
+text = "TEST"
 horizontal_alignment = 1
 
 [node name="SubTitle" type="Label" parent="CenterContainer/VBox/TitleBox" unique_id=205]
 layout_mode = 2
-text = "BUILD YOUR EMPIRE"
+text = "DEMO"
 horizontal_alignment = 1
 
 [node name="BtnVBox" type="VBoxContainer" parent="CenterContainer/VBox" unique_id=211]

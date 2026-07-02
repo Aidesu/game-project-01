@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cuxqe1txobhxl" path="res://scenes/game/entities/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://di11ee8jh6jjw" path="res://scenes/main.tscn" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://b00o2bj1ekq37" path="res://scripts/GameScene.gd" id="4_gsc"]
+[ext_resource type="PackedScene" uid="uid://cvydbxdm3liwu" path="res://scenes/ui/screens/pause_menu.tscn" id="5_pause"]
 
 [node name="Game" type="Node" unique_id=1794463850]
 script = ExtResource("4_gsc")
@@ -20,4 +21,5 @@ zoom = Vector2(3, 3)
 [node name="HUD" type="CanvasLayer" parent="." unique_id=312898817]
 
 [node name="Main" parent="HUD" unique_id=1809280691 instance=ExtResource("3_lnu2h")]
-mouse_filter = 0
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_pause")]

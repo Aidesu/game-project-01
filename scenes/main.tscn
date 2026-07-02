@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://di11ee8jh6jjw"]
 
 [ext_resource type="Script" uid="uid://ccamk4m7k8arw" path="res://scripts/main.gd" id="1_script"]
-[ext_resource type="Texture2D" uid="uid://csy6j1t7hdkqk" path="res://ressources/textures/ui/cyberpunkgui/Logo1.png" id="2_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://bwtxyh6gjvi0x" path="res://ressources/textures/ui/cyberpunkgui/Logo3.png" id="2_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://dbt7fkw08sqdl" path="res://ressources/textures/ui/logo/Mobo.png" id="3_tipki"]
 [ext_resource type="Texture2D" uid="uid://cw1vo3u2a4sji" path="res://ressources/textures/ui/logo/CPU.png" id="4_85g3d"]
 [ext_resource type="Texture2D" uid="uid://7n8xnp1eoo7v" path="res://ressources/textures/ui/logo/RAM.png" id="5_choun"]
@@ -17,93 +17,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_script")
-
-[node name="TopBar" type="PanelContainer" parent="." unique_id=101]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 50.0
-grow_horizontal = 2
-
-[node name="HBox" type="HBoxContainer" parent="TopBar" unique_id=102]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="MoneyBox" type="VBoxContainer" parent="TopBar/HBox" unique_id=103]
-custom_minimum_size = Vector2(175, 0)
-layout_mode = 2
-theme_override_constants/separation = 1
-alignment = 1
-
-[node name="MoneyLbl" type="Label" parent="TopBar/HBox/MoneyBox" unique_id=104]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "$0"
-
-[node name="EarnLbl" type="Label" parent="TopBar/HBox/MoneyBox" unique_id=105]
-layout_mode = 2
-theme_override_font_sizes/font_size = 11
-text = "+0.0$/s"
-
-[node name="HSpacer" type="Control" parent="TopBar/HBox" unique_id=106]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="LevelBox" type="VBoxContainer" parent="TopBar/HBox" unique_id=107]
-custom_minimum_size = Vector2(175, 0)
-layout_mode = 2
-theme_override_constants/separation = 4
-alignment = 1
-
-[node name="LvlLbl" type="Label" parent="TopBar/HBox/LevelBox" unique_id=108]
-layout_mode = 2
-theme_override_font_sizes/font_size = 14
-text = "LVL 1"
-horizontal_alignment = 2
-
-[node name="XpBar" type="ProgressBar" parent="TopBar/HBox/LevelBox" unique_id=109]
-custom_minimum_size = Vector2(0, 6)
-layout_mode = 2
-max_value = 200.0
-show_percentage = false
-
-[node name="StatsSidebar" type="PanelContainer" parent="." unique_id=120]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = 50.0
-offset_bottom = -46.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="VBox" type="VBoxContainer" parent="StatsSidebar" unique_id=121]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="IncomeTitle" type="Label" parent="StatsSidebar/VBox" unique_id=128]
-layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "REVENUE"
-
-[node name="IncomeValueLbl" type="Label" parent="StatsSidebar/VBox" unique_id=129]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "+0.0$/s"
-
-[node name="Sep" type="HSeparator" parent="StatsSidebar/VBox" unique_id=130]
-layout_mode = 2
-
-[node name="BuildTitle" type="Label" parent="StatsSidebar/VBox" unique_id=122]
-layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "PC BUILD"
-
-[node name="BuildSection" type="VBoxContainer" parent="StatsSidebar/VBox" unique_id=131]
-layout_mode = 2
-theme_override_constants/separation = 8
 
 [node name="BottomBar" type="PanelContainer" parent="." unique_id=110]
 layout_mode = 1
@@ -194,128 +107,183 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 3
 
-[node name="DataLabel" type="NinePatchRect" parent="." unique_id=1709079526]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 58.0
-offset_right = 550.99994
-offset_bottom = 230.0
-texture = ExtResource("2_o6xl0")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
+[node name="DataLabel" type="Control" parent="." unique_id=1709079526]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -5.0
+offset_top = 16.0
+offset_right = -5.0
+offset_bottom = 132.0
+grow_horizontal = 2
+mouse_filter = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="DataLabel" unique_id=807430609]
+[node name="NinePatchRect" type="NinePatchRect" parent="DataLabel" unique_id=150732983]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -247.00003
-offset_top = -61.0
-offset_right = 247.00003
+offset_left = -634.0
+offset_top = -68.0
+offset_right = -106.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_o6xl0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DataLabel/NinePatchRect" unique_id=807430609]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.5
+offset_top = -78.0
+offset_right = 230.5
 offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 35
+theme_override_constants/separation = 24
 alignment = 1
 
-[node name="MoboRow" type="VBoxContainer" parent="DataLabel/HBoxContainer" unique_id=1179196889]
+[node name="MoboRow" type="VBoxContainer" parent="DataLabel/NinePatchRect/HBoxContainer" unique_id=1179196889]
 layout_mode = 2
 alignment = 1
 
-[node name="MoboIcon" type="TextureRect" parent="DataLabel/HBoxContainer/MoboRow" unique_id=133]
+[node name="MoboIcon" type="TextureRect" parent="DataLabel/NinePatchRect/HBoxContainer/MoboRow" unique_id=133]
 modulate = Color(0.35, 0.3, 0.25, 0.45)
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("3_tipki")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="MoboLbl" type="Label" parent="DataLabel/HBoxContainer/MoboRow" unique_id=134]
+[node name="MoboLbl" type="Label" parent="DataLabel/NinePatchRect/HBoxContainer/MoboRow" unique_id=134]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 16
 text = "0/1"
 horizontal_alignment = 1
 
-[node name="CpuRow" type="VBoxContainer" parent="DataLabel/HBoxContainer" unique_id=880969100]
+[node name="CpuRow" type="VBoxContainer" parent="DataLabel/NinePatchRect/HBoxContainer" unique_id=880969100]
 layout_mode = 2
 alignment = 1
 
-[node name="CpuIcon" type="TextureRect" parent="DataLabel/HBoxContainer/CpuRow" unique_id=136]
+[node name="CpuIcon" type="TextureRect" parent="DataLabel/NinePatchRect/HBoxContainer/CpuRow" unique_id=136]
 modulate = Color(0.35, 0.3, 0.25, 0.45)
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("4_85g3d")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="CpuLbl" type="Label" parent="DataLabel/HBoxContainer/CpuRow" unique_id=137]
+[node name="CpuLbl" type="Label" parent="DataLabel/NinePatchRect/HBoxContainer/CpuRow" unique_id=137]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 16
 text = "0/1"
 horizontal_alignment = 1
 
-[node name="RamRow" type="VBoxContainer" parent="DataLabel/HBoxContainer" unique_id=67103623]
+[node name="RamRow" type="VBoxContainer" parent="DataLabel/NinePatchRect/HBoxContainer" unique_id=67103623]
 layout_mode = 2
 alignment = 1
 
-[node name="RamIcon" type="TextureRect" parent="DataLabel/HBoxContainer/RamRow" unique_id=1841291749]
+[node name="RamIcon" type="TextureRect" parent="DataLabel/NinePatchRect/HBoxContainer/RamRow" unique_id=1841291749]
 modulate = Color(0.35, 0.3, 0.25, 0.45)
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("5_choun")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="RamLbl" type="Label" parent="DataLabel/HBoxContainer/RamRow" unique_id=137953933]
+[node name="RamLbl" type="Label" parent="DataLabel/NinePatchRect/HBoxContainer/RamRow" unique_id=137953933]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 16
 text = "0GB"
 horizontal_alignment = 1
 
-[node name="GpuRow" type="VBoxContainer" parent="DataLabel/HBoxContainer" unique_id=708269137]
+[node name="GpuRow" type="VBoxContainer" parent="DataLabel/NinePatchRect/HBoxContainer" unique_id=708269137]
 layout_mode = 2
 alignment = 1
 
-[node name="GpuIcon" type="TextureRect" parent="DataLabel/HBoxContainer/GpuRow" unique_id=238226685]
+[node name="GpuIcon" type="TextureRect" parent="DataLabel/NinePatchRect/HBoxContainer/GpuRow" unique_id=238226685]
 modulate = Color(0.35, 0.3, 0.25, 0.45)
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("6_ya4ey")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="GpuLbl" type="Label" parent="DataLabel/HBoxContainer/GpuRow" unique_id=1002718285]
+[node name="GpuLbl" type="Label" parent="DataLabel/NinePatchRect/HBoxContainer/GpuRow" unique_id=1002718285]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 16
 text = "0/2"
 horizontal_alignment = 1
 
-[node name="DiskRow" type="VBoxContainer" parent="DataLabel/HBoxContainer" unique_id=1028970250]
+[node name="DiskRow" type="VBoxContainer" parent="DataLabel/NinePatchRect/HBoxContainer" unique_id=1028970250]
 layout_mode = 2
 alignment = 1
 
-[node name="DiskIcon" type="TextureRect" parent="DataLabel/HBoxContainer/DiskRow" unique_id=145]
+[node name="DiskIcon" type="TextureRect" parent="DataLabel/NinePatchRect/HBoxContainer/DiskRow" unique_id=145]
 modulate = Color(0.35, 0.3, 0.25, 0.45)
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("7_eb6dy")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="DiskLbl" type="Label" parent="DataLabel/HBoxContainer/DiskRow" unique_id=146]
+[node name="DiskLbl" type="Label" parent="DataLabel/NinePatchRect/HBoxContainer/DiskRow" unique_id=146]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 16
 text = "0GB"
 horizontal_alignment = 1
+
+[node name="XpBar" type="ProgressBar" parent="DataLabel/NinePatchRect" unique_id=109]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 0
+offset_left = 69.0
+offset_top = 191.0
+offset_right = 465.0
+offset_bottom = 234.0
+max_value = 200.0
+show_percentage = false
+
+[node name="LvlLbl" type="Label" parent="DataLabel/NinePatchRect" unique_id=108]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 200.0
+offset_right = 349.0
+offset_bottom = 226.0
+theme_override_font_sizes/font_size = 18
+text = "LVL 1"
+horizontal_alignment = 1
+
+[node name="MoneyBox" type="VBoxContainer" parent="DataLabel/NinePatchRect" unique_id=103]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 0
+offset_left = 561.0
+offset_top = 9.0
+offset_right = 736.0
+offset_bottom = 59.0
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="MoneyLbl" type="Label" parent="DataLabel/NinePatchRect/MoneyBox" unique_id=104]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "$0"
+
+[node name="EarnLbl" type="Label" parent="DataLabel/NinePatchRect/MoneyBox" unique_id=105]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "+0.0$/s"
 
 [connection signal="button_down" from="BottomBar/HBox/WorkBtn" to="." method="_on_work_btn_button_down"]
 [connection signal="button_down" from="BottomBar/HBox/ShopBtn" to="." method="_on_shop_btn_button_down"]
